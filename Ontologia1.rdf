@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC/"
+     xml:base="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ciberseguridadUCC="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC">
+        <rdfs:comment>Representar conceptos clave de ciberseguridad para apoyar el análisis de riesgo</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ProtegidoPor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ProtegidoPor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#afecta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#afecta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#mitiga -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#mitiga">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#requiere -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#requiere">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Criticidad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Criticidad"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FechaDeteccion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FechaDeteccion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#nivelRiesgo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#nivelRiesgo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ProtegidoPor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Recurso que tiene valor para una organización y debe ser protegido.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#afecta"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Evento que puede comprometer la seguridad de un activo.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Antivirus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Antivirus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#AutenticacionDF -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#AutenticacionDF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#BaseDatos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#BaseDatos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ConfiguracionIncorrecta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ConfiguracionIncorrecta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control">
+        <rdfs:comment>Medida o mecanismo que reduce o mitiga riesgos de seguridad.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#CuentaCorreo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#CuentaCorreo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#DDoS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#DDoS">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FaltaParcheo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FaltaParcheo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Firewall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Firewall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Malware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Malware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Phishing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Phishing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Amenaza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica">
+        <rdfs:comment>Conjunto de reglas o lineamientos que regulan la seguridad de la información.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaAcceso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaAcceso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaBackup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaBackup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaContraseñas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaContraseñas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Servidor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Servidor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#SoftwareSinActualizar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#SoftwareSinActualizar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad">
+        <rdfs:comment>Debilidad en un sistema que puede ser explotada por una amenaza.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ProtegidoPor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Antivirus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Antivirus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+        <ciberseguridadUCC:mitiga rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#MalwareRamsomware"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#CuentaCorreoEmpresa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#CuentaCorreoEmpresa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+        <ciberseguridadUCC:Criticidad rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ciberseguridadUCC:Criticidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ErrorConfigServidor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ErrorConfigServidor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad"/>
+        <ciberseguridadUCC:FechaDeteccion>2026-04-28</ciberseguridadUCC:FechaDeteccion>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FirewallCisco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FirewallCisco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Control"/>
+        <ciberseguridadUCC:mitiga rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#MalwareRamsomware"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#MalwareRamsomware -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#MalwareRamsomware">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Malware"/>
+        <ciberseguridadUCC:afecta rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ServidorWeb"/>
+        <ciberseguridadUCC:nivelRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ciberseguridadUCC:nivelRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PhisghinCorporativo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PhisghinCorporativo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Phishing"/>
+        <ciberseguridadUCC:afecta rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#CuentaCorreoEmpresa"/>
+        <ciberseguridadUCC:mitiga rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#MalwareRamsomware"/>
+        <ciberseguridadUCC:nivelRiesgo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</ciberseguridadUCC:nivelRiesgo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaBackupDiario -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaBackupDiario">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica"/>
+        <ciberseguridadUCC:requiere rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Antivirus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaSeguridadEmpresa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#PoliticaSeguridadEmpresa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Politica"/>
+        <ciberseguridadUCC:requiere rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#FirewallCisco"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ServidorWeb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#ServidorWeb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Activo"/>
+        <ciberseguridadUCC:Criticidad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ciberseguridadUCC:Criticidad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#VulnerabilidadWindows -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#VulnerabilidadWindows">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#Vulnerabilidad"/>
+        <ciberseguridadUCC:FechaDeteccion>2026/05/01</ciberseguridadUCC:FechaDeteccion>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
