@@ -1,24 +1,33 @@
 # Actividad9.OntologiaCiberseguridad
 
 ## Descripción
-Ontología desarrollada en Protégé para representar amenazas, activos, controles y vulnerabilidades.
+Este proyecto consiste en el desarrollo de una ontología de ciberseguridad utilizando Protégé para representar conceptos relacionados con amenazas, activos, controles, políticas y vulnerabilidades.
+
+Practicando, se desarrolló un agente en Python utilizando la librería rdflib para realizar consultas SPARQL sobre la ontología y recomendar controles de seguridad según la amenaza detectada.
+
+## Objetivo
+Representar conceptos clave de ciberseguridad para apoyar el análisis de riesgos y demostrar el uso de ontologías junto con agentes inteligentes.
 
 ## Namespace
-http://www.TuNombre.org/ciberseguridad#
+http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#
 
 ## Clases principales
 - Amenaza
+- Vulnerabilidad
 - Activo
 - Control
-- Vulnerabilidad
+- Politica
 
 ## Relaciones
 - afecta
 - mitiga
-- protegidoPor
+- requiere
+- ProtegidoPor
 
-## Ejemplo SPARQL
-SELECT ?control WHERE {
-<http://www.TuNombre.org/ciberseguridad#Phishing>
-<http://www.TuNombre.org/ciberseguridad#mitiga> ?control .
-}
+## Tecnologías utilizadas
+- Protégé
+- OWL/RDF
+- Python
+- rdflib
+- SPARQL
+- GitHub
