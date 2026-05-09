@@ -8,9 +8,6 @@ Practicando, se desarrolló un agente en Python utilizando la librería rdflib p
 ## Objetivo
 Representar conceptos clave de ciberseguridad para apoyar el análisis de riesgos y demostrar el uso de ontologías junto con agentes inteligentes.
 
-## Namespace
-http://www.semanticweb.org/ulyse/ontologies/2026/4/ciberseguridadUCC#
-
 ## Clases principales
 - Amenaza
 - Vulnerabilidad
